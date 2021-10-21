@@ -20,7 +20,6 @@ export const Appbtn=styled.div`
     color:#fff;
     font-weight:800;
     cursor: pointer;
-    margin-right: 30px;
     font-size: 20px;
     line-height: 50px;
     border-radius: 10px;
@@ -30,17 +29,19 @@ export const Appbtn=styled.div`
     }
 `
 export const Menu=styled.ul`
+    width:800px;
     display:inline-flex;
     position:relative;
     flex-direction: row;
     list-style:none;
     cursor: pointer;
+    justify-content: space-evenly;
     &>li{
         margin-right: 30px;
         font-size:20px;
         font-weight:550;
-        color:#302f2f;
-        width:200px;
+        /* color:#302f2f; */
+        min-width:100px;
         height:100px;
         &:hover{
             color:grey; 
@@ -51,17 +52,23 @@ export const Menu=styled.ul`
         }
     
     }
+    &>li:nth-child(4){
+        width:auto !important;
+    }
 
     
 `
 export const Gnb=styled.div`
     float:right;
-    display:inline-flex;
-    padding-right:100px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     height:100px;
+    width:1200px;
+    
 `
 export const Mode =styled.div`
-    float:left;
+    float:right;
     width:50px;
     height:50px;
     margin-right: 30px;
@@ -106,7 +113,76 @@ export const nightmode =styled.div`
     background-color: #1a1c25;
 `
 export const Layer=styled.div`
+    display:none;
     @media screen and (max-width: 720px){
-        display:none !important;
+        display:block !important;
     }
 `
+export const NavToggle=styled.div`
+    display:none;
+    &>#nav-toggle{
+        display:none !important;
+    }
+    @media screen and (max-width: 720px){
+        display:block;
+        &>label{
+            display:block !important; 
+            width:50px;
+            height:40px;
+            position:absolute;
+            z-index:55;
+            right:4px;
+            top:25px;
+        }
+        &>#nav-toggle{
+        display:none !important;
+    }
+        &>label>span{
+            width:50px;
+            height:3px;
+            background: #1a1c25;
+            border-radius: 2px;
+            position:absolute;
+        }
+        &>label>span:nth-child(1){
+            top:0;
+        }
+        &>label>span:nth-child(2){
+            top:50%;
+            transform:translateY(-50%);
+        }
+        &>label>span:nth-child(3){
+            bottom:0;
+        }
+        &>label>span{
+            width:50px;
+            height:3px;
+            background: #1a1c25;
+            border-radius: 2px;;
+        }
+        &>#nav-toggle:checked + label>span:nth-child(1){
+            top:50%;
+            transform:translateY(-50%)rotate(45deg);
+        }
+        &>#nav-toggle:checked + label>span:nth-child(2){
+            opacity:0;
+        }
+        &>#nav-toggle:checked + label>span:nth-child(3){
+            bottom:50%;
+            transform:translateY(50%) rotate(-45deg);
+        }
+        &#nav-toggle:checked+label>ul{
+            position:absolute;
+            width:100%;
+            height:100%;
+            display:sticky;
+            background:#b993ff;
+            left:0;
+            top:0;
+            z-index:5;
+
+        }
+
+    }
+`
+
