@@ -1,15 +1,14 @@
 import React from 'react';
-import {Menu} from './header_css.jsx';
-
-const Header=()=>{
+import Gnb from './menu';
+import {Logo,Header} from './header_css';
+const App=()=>{
     return(
-        <>
-        <Menu>우리팀</Menu>
-        <Menu>파이팅</Menu>
-        <Menu>최고야!</Menu>
-        </>
+        <Header>
+            <Logo/>
+            <Gnb/>
+        </Header>
     )
 }
 
-export default Header
+export default App
 

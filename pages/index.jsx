@@ -6,19 +6,11 @@ import {plus_number_request} from '../reducers/number'
 const index=()=>{
     const dispatch = useDispatch();
     const {current_number} = useSelector((state)=>state.number);
-    const post=useSelector((state)=>state.post)
-    
-    const btn_click=(e)=>{
-        e.preventDefault();
-        console.log(post);
-        console.log(current_number)
-        dispatch(plus_number_request(current_number));
-    }
+    const post=useSelector((state)=>state.light)
     return(
         <>
         <RootProvider/>
-        <div>{current_number}</div>
-        <button onClick={btn_click}>+</button>
+        adfasdfsdf
         </>
         )
 }
