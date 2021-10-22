@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {Appbtn,Menu,Mode,Gnb,HoverMenu,Layer,NavToggle,Accordian} from './header_css';
 import {useDispatch,useSelector} from 'react-redux'
 import {nightmode_request} from '../../../reducers/mode'
+import Menu1 from './accordian'
 const App=()=>{
     const dispatch = useDispatch();
     const {nightMode} = useSelector((state)=>state.mode);
@@ -24,26 +25,8 @@ const App=()=>{
             <NavToggle>
                 <input type = "checkbox" id = "nav-toggle" onClick={onNavClick}/>
                 <label htmlFor="nav-toggle">
-                
-               <span/><span/><span/></label>
-               <ul>
-                    {menu.map((v,k)=>{
-                            return(
-                                <>
-                                    <li key={k}>{Object.keys(v)}
-                                        <ul>
-                                            {Object.values(v)[0].map((m,j)=>{
-                                                return(
-                                                    <li key={j}>{m}</li>
-                                                    )                         
-                                            })} 
-                                        </ul> 
-                                    </li>
-                                </>
-                            )
-                    })}
-               </ul>
-               
+                <span/><span/><span/></label>
+                {toggle?<Menu1/>:''}               
             </NavToggle>  
             <Menu>
                 {menu.map((v,k)=>{

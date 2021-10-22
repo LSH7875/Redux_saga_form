@@ -3,9 +3,11 @@ import Header from './Header/header.jsx';
 
 const ThemeLayout = ({children}) => {
     return(
-        <>
-           <Header/>
-           {children}
+        <>  
+
+                <Header/>
+                {children}
+
         </>
     )
 }

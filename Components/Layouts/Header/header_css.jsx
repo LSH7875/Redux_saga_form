@@ -55,7 +55,9 @@ export const Menu=styled.ul`
     &>li:nth-child(4){
         width:auto !important;
     }
-
+    @media screen and (max-width: 720px){
+        display:none;
+    }
     
 `
 export const Gnb=styled.div`
@@ -135,8 +137,8 @@ export const NavToggle=styled.div`
             top:25px;
         }
         &>#nav-toggle{
-        display:none !important;
-    }
+            display:none !important;
+        }
         &>label>span{
             width:50px;
             height:3px;
@@ -181,6 +183,40 @@ export const NavToggle=styled.div`
             top:0;
             z-index:5;
 
+        }
+        &#nav-togglelabel>ul{
+            width:720px;
+            height:100px;
+            background-color:red;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:3;
+        }
+        &#nav-toggle:checked+label>ul>li{
+            background:red;
+            color:red;
+        }
+        &>ul{
+            margin-top: 0;
+            position:absolute;
+            width:100vw;
+            height:100vh;
+            background: white;
+            top:0;
+            left:0;
+            list-style: none;
+            padding: 4px;
+            &>li{
+                font-size:22px;
+                font-weight:800;
+                color:#1a1c25;
+                border-bottom: 1px solid grey;
+                &>ul{
+                    list-style: none;
+                    font-size:16px;
+                }
+            }
         }
 
     }

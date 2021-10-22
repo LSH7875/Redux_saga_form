@@ -8,8 +8,8 @@ const RootProvider = ({children}) => {
         <>
             <ThemeLayout>
                 {nightMode===true?
-                    <Light>{children}</Light>
-                    :<Night>{children}</Night>
+                    <Night>{children}</Night>
+                    :<Light>{children}</Light>
                 }
             </ThemeLayout>
         </>
